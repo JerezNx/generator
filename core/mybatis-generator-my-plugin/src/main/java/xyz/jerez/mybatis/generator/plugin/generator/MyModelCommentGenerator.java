@@ -1,4 +1,4 @@
-package xyz.jerez.mybatis.generator.plugin.comment;
+package xyz.jerez.mybatis.generator.plugin.generator;
 
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;

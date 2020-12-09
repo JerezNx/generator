@@ -1,4 +1,4 @@
-package xyz.jerez.mybatis.generator.plugin.comment;
+package xyz.jerez.mybatis.generator.plugin.plugin;
 
 import org.junit.Test;
 import org.mybatis.generator.api.ShellRunner;

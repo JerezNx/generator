@@ -1,10 +1,11 @@
-package xyz.jerez.mybatis.generator.plugin.comment;
+package xyz.jerez.mybatis.generator.plugin.generator;
 
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.config.Context;
 import org.mybatis.generator.config.JDBCConnectionConfiguration;
 import org.mybatis.generator.config.TableConfiguration;
+import xyz.jerez.mybatis.generator.plugin.util.StringUtil;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -115,7 +116,7 @@ public class SqlServerCommentGenerator {
             final String tableName = resultSet.getString("table_name");
             final String columnName = resultSet.getString("column_name");
             final String columnRemark = resultSet.getString("column_remark");
-            if (!isEmpty(columnRemark)) {
+            if (!StringUtil.isEmpty(columnRemark)) {
                 for (IntrospectedTable table : allTables) {
                     if (table.getTableConfiguration().getTableName().equals(tableName)) {
                         final Optional<IntrospectedColumn> column = table.getColumn(columnName);
@@ -135,7 +136,7 @@ public class SqlServerCommentGenerator {
         while (resultSet.next()) {
             final String tableName = resultSet.getString("table_name");
             final String tableRemark = resultSet.getString("table_remark");
-            if (!isEmpty(tableRemark)) {
+            if (!StringUtil.isEmpty(tableRemark)) {
                 for (IntrospectedTable table : allTables) {
                     if (table.getTableConfiguration().getTableName().equals(tableName)) {
                         table.setRemarks(tableRemark);
@@ -163,13 +164,6 @@ public class SqlServerCommentGenerator {
                 // ignore
             }
         }
-    }
-
-    /**
-     * 字符串判空
-     */
-    private static boolean isEmpty(String columnRemark) {
-        return columnRemark == null || "".equals(columnRemark);
     }
 
 }

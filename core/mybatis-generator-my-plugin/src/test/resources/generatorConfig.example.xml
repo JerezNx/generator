@@ -8,12 +8,15 @@
         <property name="autoDelimitKeywords" value="true"/>
         <property name="beginningDelimiter" value="["/>
         <property name="endingDelimiter" value="]"/>
-        <plugin type="xyz.jerez.mybatis.generator.plugin.comment.LombokPlugin">
+        <plugin type="xyz.jerez.mybatis.generator.plugin.plugin.LombokPlugin">
             <property name="useLombok" value="true"/>
         </plugin>
-        <plugin type="xyz.jerez.mybatis.generator.plugin.comment.MapperCommentPlugin">
+        <plugin type="xyz.jerez.mybatis.generator.plugin.plugin.MapperCommentPlugin">
         </plugin>
-        <commentGenerator type="xyz.jerez.mybatis.generator.plugin.comment.MyModelCommentGenerator">
+        <plugin type="xyz.jerez.mybatis.generator.plugin.plugin.JavaPropertyPlugin">
+            <property name="prefix" value="_"/>
+        </plugin>
+        <commentGenerator type="xyz.jerez.mybatis.generator.plugin.generator.MyModelCommentGenerator">
             <property name="dateFormat" value="yyyy-MM-dd HH:mm:ss"/>
             <property name="addRemarkComments" value="true"/>
             <property name="suppressDate" value="false"/>
