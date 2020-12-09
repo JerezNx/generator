@@ -62,6 +62,7 @@
     <kotlin.version>1.4.20</kotlin.version>
     <junit.jupiter.version>5.7.0</junit.jupiter.version>
     <junit.platform.version>1.7.0</junit.platform.version>
+    <skipTests>true</skipTests>
   </properties>
 
   <build>
@@ -306,12 +307,13 @@
 
   <modules>
     <module>mybatis-generator-core</module>
-    <module>mybatis-generator-systests-domtests</module>
-    <module>mybatis-generator-maven-plugin</module>
-    <module>mybatis-generator-systests-common</module>
-    <module>mybatis-generator-systests-mybatis3</module>
-    <module>mybatis-generator-systests-mybatis3-java8</module>
-    <module>mybatis-generator-systests-kotlin</module>
+    <module>mybatis-generator-my-plugin</module>
+<!--    <module>mybatis-generator-systests-domtests</module>-->
+<!--    <module>mybatis-generator-maven-plugin</module>-->
+<!--    <module>mybatis-generator-systests-common</module>-->
+    <!--    <module>mybatis-generator-systests-mybatis3</module>-->
+<!--    <module>mybatis-generator-systests-mybatis3-java8</module>-->
+<!--    <module>mybatis-generator-systests-kotlin</module>-->
   </modules>
 
   <repositories>

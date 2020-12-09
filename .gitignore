@@ -75,3 +75,5 @@ out
 bin/
 data/*
 *workspace.xml
+
+**/target
