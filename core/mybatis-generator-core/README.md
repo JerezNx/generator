@@ -22,29 +22,3 @@ Support is provided through the user mailing list.  Mail
 questions or bug reports to:
 
   mybatis-user@googlegroups.com
-
-
-## 调整
-### 1.数据库中字段命名问题
-- 首字符数字的字段：
-`org.mybatis.generator.internal.util.JavaBeansUtil.getValidPropertyName`
-```
-//...
-// 增加首字符判断
-if (answer != null && Character.isDigit(answer.charAt(0))) {
-    answer = "_" + answer;
-}
-return answer;
-```
-
-
-`org.mybatis.generator.internal.util.JavaBeansUtil.getCamelCaseString`
-```
-//...
-// 增加首字符判断
-if (Character.isDigit(sb.charAt(0))) {
-    sb.insert(0, '_');
-}
-
-return sb.toString();
-```
